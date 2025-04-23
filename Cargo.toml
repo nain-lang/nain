@@ -1,0 +1,14 @@
+[package]
+name = "nain"
+version = "0.1.0"
+edition = "2024"
+authors = ["Mario Rosell"]
+license = "GPL-3.0-or-later"
+description = "The post-modern programming language"
+homepage = "https://www.nainlang.xyz"
+repository = "https://github.com/nain-lang/nain"
+readme = "README.md"
+keywords = ["nain", "programming language", "compiler"]
+categories = ["programming-language"]
+
+[dependencies]

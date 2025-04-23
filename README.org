@@ -1,0 +1,168 @@
+* Nain
+
+** Table of Contents
+
+- [[#about][About]]
+- [[#features][Features]]
+- [[#quick-start][Quick Start]]
+	- [[#installation][Installation]]
+		- [[#building-from-source][Building from Source]]
+		    - [[#dependencies][Dependencies]]
+			- [[#installing][Installing]]
+		- [[#installing-from-binaries][Installing from Binaries]]
+        - [[#installing-from-cargo][Installing from Cargo]]
+- [[#hello-world][Hello World]
+- [[#documentation][Documentation]]
+- [[#usage][Usage]]
+- [[#license][License]]
+- [[#contributing][Contributing]]
+- [[#star-graph][Star Graph]]
+
+** About
+
+Nain is a *free & open-source*, *lightweight* and *modern* programming language
+for *systems programming* and *embedded systems*.
+
+It is designed to be *fast*, *efficient* and *easy to use*.
+
+** Features
+
+- *⚡ Blazingly Fast*: Nain is extremely efficient and fast, which allows you to
+write high-performance applications.
+- *🛠️ Low-Level Control*: Nain gives you low-level control over memory.
+- *🧩 Extensible*: Nain is /very/ extensible and can be easily extended with
+- *🔒 Safe*: Nain is /really/ secure. It has a strong type system and garbage
+collector.
+
+** Quick Start
+
+*** Installation
+
+**** Building from Source
+
+***** Dependencies
+
+- =rust= (>=1.7.0)
+
+***** Installing
+
+Run these commands to build Nain from source:
+
+#+BEGIN_SRC bash
+$ git clone https://github.com/nain-lang/nain.git && cd nain
+$ cargo build --release
+$ nain -v # test the installation
+#+END_SRC
+
+**** Installing from Binaries
+
+Go to [[https://get.nainlang.xyz/][the releases page]] and download the latest release for your
+OS
+
+#+BEGIN_QUOTE
+*Note:* We provide binaries for FreeBSD, OpenBSD, Linux, macOS (OS X) and Windows.
+#+END_QUOTE
+
+Put the executable in yor PATH. On Windows this is usually =C:\Windows\System32=. On Linux
+and most \*nix systems this is usually =/usr/local/bin=. On macOS this is usually =Applications=.
+
+**** Installing from Cargo
+
+If you have =cargo= installed, just run:
+
+#+BEGIN_SRC bash
+$ cargo install nain
+$ nain -v # test the installation
+#+END_SRC
+
+*** Hello World
+
+#+BEGIN_QUOTE
+*Note:* Nain is *not meant for begginers*!
+If you have a bit of experience with other system programming languages, you
+should be able to learn Nain in a few hours, or even minutes.
+#+END_QUOTE
+
+To print something to the screen, use the =printf()= function (/similar to C's printf/).
+
+We also need to wrap this on the =main()= function, which is the entry point of
+the program.
+
+We also need to import the =studio= module, which is a collection of the most
+used standard library functions. In Nain, you import modules using the
+=import= keyword.
+
+#+BEGIN_SRC nain
+// This is a commend
+/* This is a
+   multi-line comment */
+
+import studio
+
+// Use func to declare a function
+func main()
+{
+	printf("Hello, World!\n") // Note that in Nain the semicolon is optional
+}
+#+END_SRC
+
+Now, to compile the program, run:
+
+#+BEGIN_SRC bash
+$ nain comp hello.na # nain files end in .na
+$ ./hello # run the program
+Hello, World!
+#+END_SRC
+
+There is a /little trick/ you can use to compile run and delete the program in one command.
+This is useful for testing and debugging:
+
+#+BEGIN_SRC bash
+$ nain run hello.na # will compile, run and delete the program after running
+Hello, World!
+#+END_SRC
+
+** Documentation
+
+There are tons of hand-crafted tutorials on the [[https://docs.nainlang.xyz/][website].
+
+The documentation is really comprehensive and non-technical (except for the
+[[https://wiki.nainlang.xyz/][wiki]]).
+
+** Usage
+
+This table shows the CLI commands:
+
+| Command            | Description                                         |
+|--------------------+-----------------------------------------------------|
+| `nain`             | The Nain CLI.                                       |
+| `comp, compile`    | Compile a Nain program.                             |
+| `run`              | Compile and run a Nain program, then, deletes it.   |
+| `build`            | Builds and installs a Nain program.                 |
+| `test`             | Runs the tests of a Nain program.                   |
+| `pkg`              | The Nain package manager.                           |
+| `pkg install`      | Installs a Nain package on the repository.          |
+| `pkg remove`       | Removes a Nain package from the repository.         |
+| `pkg search`       | Searches for a Nain package on the repository.      |
+| `pkg update`       | Gets the latest packages from the repository.       |
+| `pkg upgrade`      | Upgrades a/the package/s specified (or all if not). |
+| `pkg info`         | Shows information about a package.                  |
+| `pkg list`         | Lists all the packages installed.                   |
+| `pkg publish`      | Publishes a package to the repository.              |
+| `pkg publish-upd`  | Publishes an update to a package.                   |
+| `pkg unpublish`    | Unpublishes a package.                              |
+
+** License
+
+Nain is under the GNU General Public License v3.0 (GPL-3.0). Or later if published.
+See the [[LICENSE][LICENSE]] file for more information.
+
+** Contributing
+
+Please, see our [[CONTRIBUTING.md][CONTRIBUTING]] file for more information on how to
+contribute to Nain.
+
+** Star Graph
+
+[[https://api.star-history.com/svg?repos=nain-lang/nain&type=Date]]
+
