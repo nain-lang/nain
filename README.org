@@ -1,4 +1,5 @@
 * Nain
+[[./media/LogoNain1080x1080.png]]
 
 ** Table of Contents
 
@@ -135,22 +136,22 @@ This table shows the CLI commands:
 
 | Command            | Description                                         |
 |--------------------+-----------------------------------------------------|
-| `nain`             | The Nain CLI.                                       |
-| `comp, compile`    | Compile a Nain program.                             |
-| `run`              | Compile and run a Nain program, then, deletes it.   |
-| `build`            | Builds and installs a Nain program.                 |
-| `test`             | Runs the tests of a Nain program.                   |
-| `pkg`              | The Nain package manager.                           |
-| `pkg install`      | Installs a Nain package on the repository.          |
-| `pkg remove`       | Removes a Nain package from the repository.         |
-| `pkg search`       | Searches for a Nain package on the repository.      |
-| `pkg update`       | Gets the latest packages from the repository.       |
-| `pkg upgrade`      | Upgrades a/the package/s specified (or all if not). |
-| `pkg info`         | Shows information about a package.                  |
-| `pkg list`         | Lists all the packages installed.                   |
-| `pkg publish`      | Publishes a package to the repository.              |
-| `pkg publish-upd`  | Publishes an update to a package.                   |
-| `pkg unpublish`    | Unpublishes a package.                              |
+| =nain=             | The Nain CLI.                                       |
+| =comp compile=    | Compile a Nain program.                             |
+| =run=              | Compile and run a Nain program, then, deletes it.   |
+| =build=            | Builds and installs a Nain program.                 |
+| =test=             | Runs the tests of a Nain program.                   |
+| =pkg=              | The Nain package manager.                           |
+| =pkg install=      | Installs a Nain package on the repository.          |
+| =pkg remove=       | Removes a Nain package from the repository.         |
+| =pkg search=       | Searches for a Nain package on the repository.      |
+| =pkg update=       | Gets the latest packages from the repository.       |
+| =pkg upgrade=      | Upgrades a/the package/s specified (or all if not). |
+| =pkg info=         | Shows information about a package.                  |
+| =pkg list=         | Lists all the packages installed.                   |
+| =pkg publish=      | Publishes a package to the repository.              |
+| =pkg publish upd=  | Publishes an update to a package.                   |
+| =pkg unpublish=    | Unpublishes a package.                              |
 
 ** License
 
@@ -165,4 +166,3 @@ contribute to Nain.
 ** Star Graph
 
 [[https://api.star-history.com/svg?repos=nain-lang/nain&type=Date]]
-
