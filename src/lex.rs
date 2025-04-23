@@ -200,6 +200,7 @@ fn match_tok(s: &str) -> TokenType {
 }
 
 /// A function that returns all the tokens from a line
+/// A function that returns all the tokens from a line
 fn match_line(line: &str) -> Vec<TokenStruct> {
     let mut toks = Vec::new();
     let mut word = String::new();
@@ -210,6 +211,7 @@ fn match_line(line: &str) -> Vec<TokenStruct> {
     while i < chars.len() {
         let ch = chars[i];
 
+        // If the character is a space, treat the current word as a token
         if ch.is_whitespace() {
             if !word.is_empty() {
                 toks.push(TokenStruct {
@@ -220,32 +222,112 @@ fn match_line(line: &str) -> Vec<TokenStruct> {
                 });
                 word.clear();
             }
-        } else if ch == '\n' || ch == '\0' {
+        } else if ch == '(' {
+            // Handle LeftParen as a separate token
             if !word.is_empty() {
                 toks.push(TokenStruct {
                     tok_type: match_tok(&word),
                     val: word.clone(),
                     line: 1,
-                    pos: i as u16,
+                    pos: i as u16 - word.len() as u16,
                 });
                 word.clear();
             }
             toks.push(TokenStruct {
-                tok_type: TokenType::EndOfFile,
-                val: "EOF".to_string(),
+                tok_type: TokenType::LeftParen,
+                val: "(".to_string(),
                 line: 1,
                 pos: i as u16,
             });
-            break;
+        } else if ch == ')' {
+            // Handle RightParen as a separate token
+            if !word.is_empty() {
+                toks.push(TokenStruct {
+                    tok_type: match_tok(&word),
+                    val: word.clone(),
+                    line: 1,
+                    pos: i as u16 - word.len() as u16,
+                });
+                word.clear();
+            }
+            toks.push(TokenStruct {
+                tok_type: TokenType::RightParen,
+                val: ")".to_string(),
+                line: 1,
+                pos: i as u16,
+            });
+        } else if ch == '{' {
+            // Handle LeftBrace as a separate token
+            if !word.is_empty() {
+                toks.push(TokenStruct {
+                    tok_type: match_tok(&word),
+                    val: word.clone(),
+                    line: 1,
+                    pos: i as u16 - word.len() as u16,
+                });
+                word.clear();
+            }
+            toks.push(TokenStruct {
+                tok_type: TokenType::LeftBrace,
+                val: "{".to_string(),
+                line: 1,
+                pos: i as u16,
+            });
+        } else if ch == '}' {
+            // Handle RightBrace as a separate token
+            if !word.is_empty() {
+                toks.push(TokenStruct {
+                    tok_type: match_tok(&word),
+                    val: word.clone(),
+                    line: 1,
+                    pos: i as u16 - word.len() as u16,
+                });
+                word.clear();
+            }
+            toks.push(TokenStruct {
+                tok_type: TokenType::RightBrace,
+                val: "}".to_string(),
+                line: 1,
+                pos: i as u16,
+            });
+        } else if ch == ';' {
+            // Handle Semicolon as a separate token
+            if !word.is_empty() {
+                toks.push(TokenStruct {
+                    tok_type: match_tok(&word),
+                    val: word.clone(),
+                    line: 1,
+                    pos: i as u16 - word.len() as u16,
+                });
+                word.clear();
+            }
+            toks.push(TokenStruct {
+                tok_type: TokenType::Semicolon,
+                val: ";".to_string(),
+                line: 1,
+                pos: i as u16,
+            });
         } else {
+            // If the character is part of the current word, add it to the word
             word.push(ch);
         }
 
         i += 1;
     }
 
+    // If a word is left after processing, create a token for it
+    if !word.is_empty() {
+        toks.push(TokenStruct {
+            tok_type: match_tok(&word),
+            val: word.clone(),
+            line: 1,
+            pos: i as u16 - word.len() as u16,
+        });
+    }
+
     toks
 }
+
 
 /// A function that returns all the tokens from the input
 pub fn lex_in(input: &str) -> Vec<TokenStruct> {
