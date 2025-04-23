@@ -12,7 +12,7 @@
 			- [[#installing][Installing]]
 		- [[#installing-from-binaries][Installing from Binaries]]
         - [[#installing-from-cargo][Installing from Cargo]]
-- [[#hello-world][Hello World]
+- [[#hello-world][Hello World]]
 - [[#documentation][Documentation]]
 - [[#usage][Usage]]
 - [[#license][License]]
