@@ -54,7 +54,7 @@ Nain is a **free & open-source**, **safe**, **fast** and **secure** systems prog
 
   Note that the `$` is not part of the command
 
-  > [!NOTE]
+  > !NOTE
   > Make sure you have `curl` installed on your system.
 
   </details>
