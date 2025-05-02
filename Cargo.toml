@@ -1,0 +1,15 @@
+[package]
+name = "nain"
+version = "0.1.0"
+edition = "2021"
+authors = [ "Mario Rosell <mar1lusk1@proton.me>"]
+categories = [ "compiler", "systems-programming", "language" ]
+description = "Nain - The post-modern programming language."
+readme = "README.md"
+homepage = "https://www.nainlang.xyz"
+repository = "https://github.com/nain-lang/nain"
+license = "GPL-3.0-or-later OR MPL-2.0-or-later"
+
+[dependencies]
+ariadne = "0.5.1"
+logos = "0.15.0"
