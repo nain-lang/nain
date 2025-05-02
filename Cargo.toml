@@ -13,3 +13,4 @@ license = "GPL-3.0-or-later OR MPL-2.0-or-later"
 [dependencies]
 ariadne = "0.5.1"
 logos = "0.15.0"
+yansi = "1.0.1"
