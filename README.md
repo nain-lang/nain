@@ -54,7 +54,7 @@ $ curl -sSL https://raw.githubusercontent.com/nain-lang/nain/refs/heads/master/i
 
 Note that the `$` is not part of the command
 
-> [!NOTE]
+> **NOTE**
 > Make sure you have `curl` installed on your system.
 
   </details>
