@@ -27,32 +27,32 @@ Nain is a **free & open-source**, **safe**, **fast** and **secure** systems prog
 
 ## Installation
 
-  <details>
-    <summary>🪟 Windows</summary>
+<details>
+  <summary>🪟 Windows</summary>
 
-  To install Nain on Windows, run the following PowerShell script:
+To install Nain on Windows, run the following PowerShell script:
 
-  ```powershell
-  # Invoke-WebRequest -Uri https://raw.githubusercontent.com/nain-lang/nain/refs/heads/master/install.ps1 -OutFile install.ps1; .\install.ps1
-  ```
+```powershell
+# Invoke-WebRequest -Uri https://raw.githubusercontent.com/nain-lang/nain/refs/heads/master/install.ps1 -OutFile install.ps1; .\install.ps1
+```
 
-  Note that the `#` is not part of the command.
+Note that the `#` is not part of the command.
 
-  It will ask you **one question**: \[?\] What version of Nain do you want to install (**\[g\]it or \[r\]elease**)?
-  - If you want to install the absolute latest version (**not recommended**), press <kbd>g</kbd>. Else, press <kbd>r</kbd>.
+It will ask you **one question**: \[?\] What version of Nain do you want to install (**\[g\]it or \[r\]elease**)?
+- If you want to install the absolute latest version (**not recommended**), press <kbd>g</kbd>. Else, press <kbd>r</kbd>.
 
-  </details>
+</details>
 
-  <details>
-    <summary>🐧 Linux / 🍎 MacOS / 👹 FreeBSD</summary>
+<details>
+  <summary>🐧 Linux / 🍎 MacOS / 👹 FreeBSD</summary>
 
-  To install Nain on Linux, MacOS, or FreeBSD, run the following command:
+To install Nain on Linux, MacOS, or FreeBSD, run the following command:
 
-  ```bash
-  $ curl -sSL https://raw.githubusercontent.com/nain-lang/nain/refs/heads/master/install.sh | bash
-  ```
+```bash
+$ curl -sSL https://raw.githubusercontent.com/nain-lang/nain/refs/heads/master/install.sh | bash
+```
 
-  Note that the `$` is not part of the command
+Note that the `$` is not part of the command
 
 > [!NOTE]
 > Make sure you have `curl` installed on your system.
