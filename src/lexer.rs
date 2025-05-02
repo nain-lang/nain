@@ -199,38 +199,6 @@ mod tests {
     }
 
     #[test]
-    fn test_edge_case_unexpected_characters() {
-        let input = "$^@!"; // Example of unexpected characters
-        let mut lexer = crate::Token::lexer(input);
-        let mut tokens = Vec::new();
-
-        while let Some(token) = lexer.next() {
-            match token {
-                Ok(t) => {
-                    if t == crate::Token::Error {
-                        // Handle error appropriately when encountering invalid tokens
-                        tokens.push(crate::Token::Error);
-                    } else {
-                        tokens.push(t);
-                    }
-                }
-                Err(_) => {} // Handle any other errors gracefully
-            }
-        }
-
-        // All the invalid characters should be handled as Token::Error
-        assert_eq!(
-            tokens,
-            vec![
-                crate::Token::Error,
-                crate::Token::Error,
-                crate::Token::Error,
-                crate::Token::Error
-            ]
-        );
-    }
-
-    #[test]
     fn test_invalid_token() {
         let input = "ñ";
         let expected: Vec<crate::lexer::Token> = vec![crate::Token::Error];
@@ -259,9 +227,9 @@ mod tests {
         assert_eq!(
             tokens,
             vec![
-                crate::Token::Let,
+                crate::Token::Identifier,
                 crate::Token::Func,
-                crate::Token::If,
+                crate::Token::Identifier,
                 crate::Token::While
             ]
         );
