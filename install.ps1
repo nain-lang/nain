@@ -18,6 +18,11 @@ switch -Regex ($choice) {
             git clone https://github.com/nain-lang/nain.git
             Set-Location nain
             cargo install --path .
+
+            # Move the installed executable to C:\nain\bin
+            $exePath = (Get-Command nain).Source
+            $destinationPath = Join-Path -Path $installDir -ChildPath "nain.exe"
+            Move-Item -Path $exePath -Destination $destinationPath -Force
             Write-Host "`n`e[32m[+]`e[0m Nain installed successfully!"
         }
         else {
@@ -40,3 +45,4 @@ switch -Regex ($choice) {
         exit 1
     }
 }
+
