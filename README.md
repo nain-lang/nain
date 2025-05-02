@@ -44,14 +44,14 @@ Nain is a **free & open-source**, **safe**, **fast** and **secure** systems prog
   <details>
     <summary>🐧 Linux / 🍎 MacOS / 👹 FreeBSD</summary>
 
-    To install Nain on Linux, MacOS, or FreeBSD, run the following command:
+  To install Nain on Linux, MacOS, or FreeBSD, run the following command:
 
-    ```bash
-    curl -sSL https://raw.githubusercontent.com/nain-lang/nain/refs/heads/master/install.sh | bash
-    ```
+  ```bash
+  curl -sSL https://raw.githubusercontent.com/nain-lang/nain/refs/heads/master/install.sh | bash
+  ```
 
-    > [!NOTE]
-    > Make sure you have `curl` installed on your system.
+  > [!NOTE]
+  > Make sure you have `curl` installed on your system.
 
   </details>
 
