@@ -9,7 +9,7 @@
   <a href="#installation">Installation</a> •
   <a href="#configuration">Configuration</a> •
   <a href="#documentation">Documentation</a> •
-  <a href="#acknowledge">Acknowledge</a> •
+  <a href="#acknowledgement">Acknowledgement</a> •
   <a href="#license">License</a>
 </p>
 
