@@ -56,6 +56,8 @@ pub struct ReportType {
     pub line: usize,
     /// The column number
     pub column: usize,
+    /// The title of the report.
+    pub title: String,
 }
 
 //--------------------------------------- IMPLEMENTATIONS -------------------------------
@@ -72,12 +74,20 @@ impl ErrorReporter {
     }
 
     /// Adds a new report
-    pub fn add(&mut self, report_type: ReportKind, message: &str, line: usize, column: usize) {
+    pub fn add(
+        &mut self,
+        report_type: ReportKind,
+        message: &str,
+        line: usize,
+        column: usize,
+        title: &str,
+    ) {
         self.reports.push(ReportType {
             report_type,
             message: message.to_string(),
             line,
             column,
+            title: title.to_string(),
         });
     }
 
@@ -95,7 +105,7 @@ impl ErrorReporter {
                 ReportKind::Spelling => Color::Green,
             };
 
-            let kind = ariadne::ReportKind::Custom("Message", color);
+            let kind = ariadne::ReportKind::Custom("title", color);
 
             Report::build(kind, (self.filename.clone(), report.line..report.line + 1))
                 .with_message(&report.message)
@@ -133,16 +143,52 @@ Debug message here
 Speling eror here
             ";
         let mut reporter = ErrorReporter::new("test.txt", input);
-        reporter.add(ReportKind::RuntimeError, "Runtime Error", 0, 2);
-        reporter.add(ReportKind::CompileTimeError, "Compile-time error", 0, 3);
+        reporter.add(
+            ReportKind::RuntimeError,
+            "Runtime Error",
+            0,
+            2,
+            "Error Reporter Test",
+        );
+        reporter.add(
+            ReportKind::CompileTimeError,
+            "Compile-time error",
+            0,
+            3,
+            "Error Reporter Test",
+        );
 
-        reporter.add(ReportKind::WarningHigh, "High Warning", 0, 4);
-        reporter.add(ReportKind::Warning, "Warning", 0, 6);
-        reporter.add(ReportKind::WarningLow, "Low Warning", 0, 7);
+        reporter.add(
+            ReportKind::WarningHigh,
+            "High Warning",
+            0,
+            4,
+            "Error Reporter Test",
+        );
+        reporter.add(ReportKind::Warning, "Warning", 0, 6, "Error Reporter Test");
+        reporter.add(
+            ReportKind::WarningLow,
+            "Low Warning",
+            0,
+            7,
+            "Error Reporter Test",
+        );
 
-        reporter.add(ReportKind::Message, "Message", 0, 8);
-        reporter.add(ReportKind::DebugMessage, "Debug Message", 0, 9);
-        reporter.add(ReportKind::Spelling, "Spelling Error", 0, 10);
+        reporter.add(ReportKind::Message, "Message", 0, 8, "Error Reporter Test");
+        reporter.add(
+            ReportKind::DebugMessage,
+            "Debug Message",
+            0,
+            9,
+            "Error Reporter Test",
+        );
+        reporter.add(
+            ReportKind::Spelling,
+            "Spelling Error",
+            0,
+            10,
+            "Error Reporter Test",
+        );
         reporter.put();
     }
 }
