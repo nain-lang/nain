@@ -120,7 +120,6 @@ use logos::Logos;
 
 mod errors;
 mod lexer;
-mod parser;
 
 fn main() {
     let source = "
